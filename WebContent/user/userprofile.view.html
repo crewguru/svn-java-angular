@@ -1,0 +1,150 @@
+<header class="main-header">
+<div class="container-userProfile" ng-style="{'background-image': 'url(' + vm.seluser.listOfUserProfile[0].backgroundImage + ')'}"></div>
+</header>
+
+<div class="body-content clearfix" style="padding-top:211px;" >
+
+<div class="userProfilePhoto"><img src={{vm.seluser.listOfUserProfile[0].profileImage}} class="circleUserPhoto-lg" alt="" ng-style="boarder:0;"></div>
+       
+          <div class="container-UserProfileInfo">
+            <div class="col-md-12 col-sm-12">
+              <div class="block-section profileInfoDisplay">
+                  <h1> {{vm.seluser.firstname}} {{vm.seluser.lastname}}</h1>
+                  <h2>{{vm.seluser.listOfUserProfile[0].profession}}</h2>
+                  <div class="userProfileStats">
+                      <img src="assets/theme/images/viewsIcon.png"><a href="">50</a>
+                      <img src="assets/theme/images/likeIcon.png"><a href="">51</a>
+                      <img src="assets/theme/images/followersIcon.png"><a href="">52</a>
+                      <img src="assets/theme/images/locationIcon.png"><a href="">Seattle</a></div>
+                  <h3>{{vm.seluser.listOfUserProfile[0].description}}</h3>
+                  <div class="userProfileButtons"><center>
+                      <a href=""><img src="assets/theme/images/addToFolderBTN.png"></a>
+                      <a href=""><img src="assets/theme/images/viewCalendarBTN.png"></a>
+                      <a href=""><img src="assets/theme/images/messageBTN.png"></a>
+                      </center>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12">
+            <div class="activityMap">
+                <div class="col-md-6 col-sm-6">
+                    <h1>{{vm.seluser.firstname}} {{vm.seluser.lastname}} is working in <a href="#">Seattle, WA</a> at the <a href="#">{{vm.seluser.listOfWorkExperience[0].company}} </a></h1>
+                    <h2>{{vm.seluser.firstname}} can work as a local in these cities, that means lorem ipsum dolor sit amet, consecetur adilpiscing elit. Fusce tristique ante ut convallis pellentesque.</h2>
+                </div>
+                
+                <div class="col-md-6 col-sm-6">
+                   
+                    
+                    <div id="map"></div>
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: {lat: 44.540, lng: -78.546},
+            zoom: 8
+        });
+      }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_WkW4dbaXfNMZuR5Ld87m-eG2gsPyfLY&callback=initMap">
+    </script>
+                    
+                   
+                </div>
+            </div>
+<div class="availableAsLocalIn"><p>Also available to work as local in:</p>
+
+<a href="#" ng-repeat="location in vm.seluser.listOfLocation" >{{location.city}},{{location.state}} &nbsp;&nbsp;&nbsp;&nbsp; </a>
+          </div>
+        </div>
+
+
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--TITLE + ROW ONE // FEATURED TALENT-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->          
+          <section class="talentcolourbackground">
+      <div class="body-content clearfix">
+        <div class="block-section" style="margin-left:9%;">
+            <section class="featuredsectiontext"><h3 class="font-2x ">&mdash; WORK DISPLAY</h3></section>
+        </div>
+      </div>
+      <div style="width: 80%; position:relative; margin: auto;" ng-repeat="n in [1,2]">
+      
+          <div class="col-md-4" ng-repeat="project in vm.seluser.listOfUserProjects" ng-if=" (n ==1 && $index < 3) || (n ==2 && $index > 2)">
+            <div class="box-ic-center">
+                <img src={{project.projectImages}} height="150px">
+                    <h4><a href="#"><strong>{{project.projctName}}</strong></a></h4>
+                        <p>{{project.projectDescription}}</p>
+            </div>
+                <div class="box-ic-center-interact">
+                    <a href="#"><img src="assets/theme/images/favorite-btn.png">101</a>
+                    <a href="#"><img src="assets/theme/images/comment-btn.png">22</a>
+                    <a href="#"><img src="assets/theme/images/follow-btn.png" style="float:right;"></a>
+                </div>
+         </div>
+                
+              
+      </div>
+
+        
+        
+            
+    </section>
+
+
+        
+        
+        
+
+        
+        
+        <div class="bg-color2">
+               <!-- desc top -->
+                  <div class="row hidden-xs">
+                    <div class="block-section" style="margin-left:9%;">
+            <section class="featuredsectiontext"><h3 class="font-2x ">&mdash; EXPERIENCE DISPLAY</h3></section>
+        </div>
+                    
+                  </div><!-- end desc top -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+
+                <!-- box listing -->
+                <div class="block-section-sm box-list-area">
+
+
+
+                  <!-- item list -->  
+                  <div class="box-list-workdisplay">
+                    <!-- item list -->
+                    <div class="item" ng-repeat="workExperience in vm.seluser.listOfWorkExperience">
+                      <div class="row">
+                        <div class="col-md-11">
+                          <h3 class="no-margin-top"><a href="job_details.html" class="">{{workExperience.jobtitle}}</a></h3>
+                          <h5><span class="color-black">{{workExperience.company}}</span> - <span class="color-white-mute">City, State</span></h5>
+                          <p class="text-truncate ">{{workExperience.description}}</p>
+                        </div>
+                      </div>
+                    </div><!-- end item list -->
+
+                    
+
+                    </div>
+                </div><!-- end box listing -->
+
+
+              </div>
+            </div>
+          </div>
+        </div>

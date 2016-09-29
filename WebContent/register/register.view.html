@@ -1,0 +1,87 @@
+ <header class="main-header">
+	 <div class="container-userProfile">
+	          <div class="text-center logo"> <a href="index.html"><img src="assets/theme/images/logo.png" alt=""></a></div>
+	 </div>
+ </header>
+      
+      
+      
+      
+      <!-- body-content -->
+      <div class="body-content clearfix">
+
+        <div class="block-section bg-color2">
+            
+            <div class="panel col-md-12">  
+            <div class="panel col-sm-6" style="margin:auto;">
+              <div class="panel-body" style="margin-bottom:28px;">
+                  <h7>Join the Crew</h7><br><br>
+                  <p>Register for free today and experience the benefits of <br>discovering talent and jobs with our community platform. </p><br>
+                <div class="row">
+                  <div class="col-md-12">
+                      <!-- buttons top -->
+                    <p><a href="#" class="btn btn-danger btn-theme btn-block"><i class="fa fa-google-plus pull-left bordered-right"></i> Register with Google</a></p>
+                    <!-- <p><a href="#" class="btn btn-twitter btn-theme btn-block" style="color:#ffffff; background-color:#1da1f2;"><i class="fa fa-twitter pull-left bordered-right"></i> Register with Twitter</a></p>
+                    <p><a href="#" class="btn btn-linkedin btn-theme btn-block" style="color:#ffffff; background-color:#0077b5;"><i class="fa fa-linkedin pull-left bordered-right"></i> Register with LinkedIn</a></p>
+                    <p><a href="#" class="btn btn-facebook btn-theme btn-block" style="color:#ffffff; background-color:#3b5998;"><i class="fa fa-facebook pull-left bordered-right"></i> Register with Facebook</a></p>
+                     --><!-- end buttons top -->
+                  </div>
+                    <center><p>or use the signup form to the right <img src="assets/theme/images/arrow-trans-right.png"></p></center>
+              </div>
+                  </div>
+          </div>
+
+
+<div class="panel col-sm-6" style=" margin:auto;">
+
+<!-- form login -->
+                    <form name="form" ng-submit="vm.register()" role="form">
+                      <div class="form-group">
+                        <label>Your Name:</label>
+                        <input type="name" class="form-control" placeholder="Firstname Lastname" id="firstname" name="firstname" ng-model="vm.user.firstname" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Username(Use your email):</label>
+                        <input type="email" name="userId" id="username" class="form-control" placeholder="username" ng-model="vm.user.userId" required>
+                      <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+                      </div>
+                      <div class="form-group">
+                        <label>Your Email:</label>
+                       <input type="email" name="emailId" id="emailId" class="form-control" placeholder="We'll send your password to your email" ng-model="vm.user.emailId" required>
+                      <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">Email is required</span> 
+                      </div>
+                        <div class="form-group">
+                        <div class="row">
+                          <div class="col-xs-6">
+                            <div class="checkbox flat-checkbox">
+                              <label>
+                                <input type="checkbox"> 
+                                <span class="fa fa-check"></span>
+                                I am not a robot
+                              </label>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <div class="white-space-10"></div>
+                      <div class="form-group no-margin">
+                        <button type="submit" class="btn btn-theme btn-lg btn-t-primary btn-block">Register</button>
+                     	<center><p>Help Center <img src="assets/theme/images/arrow-trans-right.png"</p></center>
+                      </div>
+                    </form><!-- form login --><!-- form login -->              
+
+          </div>
+
+
+
+        </div>
+          </div>
+
+
+      </div><!--end body-content -->
+      
+      
+      
+      
+      

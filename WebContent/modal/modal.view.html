@@ -1,0 +1,25 @@
+<div class="modal fade" id="picModal" ng-controller="fileUploadCtl" style="z-index:1500">
+          <div class="modal-dialog modal-md">
+            <div class="modal-content">
+              <form>
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h2 class="modal-title " >Upload Profile Image</h2>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group" ng-show="!resp">
+                    <input type = "file" class="btn btn-success btn-theme" file-model = "myFile"/>
+         			
+                  </div>
+                  
+                  <div ng-show="uploadProgress"> File is being uploaded ... Please Wait....</div>
+                  <div ng-show="resp"> {{uploadinfo}}</div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default btn-theme" data-dismiss="modal" ng-click="resetValues()">Close</button>
+                  <button  ng-click = "uploadFile('profileimage')" class="btn btn-success btn-theme" ng-show="!resp">Upload</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div><!-- end modal upload image -->

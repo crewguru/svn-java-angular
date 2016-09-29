@@ -1,0 +1,49 @@
+
+<div class="talentcolourbackground">
+<div>
+<button  ng-disabled="vm.currentPage >= vm.allUserProfiles.length/vm.pageSize - 1" ng-click="vm.currentPage=vm.currentPage+1">
+<div class="talentsectionnavright"></div></button>
+</div>
+<button  ng-disabled="vm.currentPage == 0" ng-click="vm.currentPage=vm.currentPage-1"><div class="talentsectionnavleft"></div></button>
+      
+      <div class="body-content clearfix">
+        <div class="block-section" style="margin-left:9%;">
+            <section class="featuredsectiontext"><h3 class="font-2x ">&mdash; FEATURED TALENT in CITY, STATE</h3></section>
+        </div>
+      </div>
+      <div style="width: 80%; position:relative; margin: auto;" ng-repeat="n in [1,2]">
+          
+          
+          <div class="col-md-4" ng-repeat="userProfile in vm.allUserProfiles | intialStart: vm.currentPage*vm.pageSize  | limitTo:6" ng-if=" (n ==1 && $index < 3) || (n ==2 && $index > 2)" >
+            <div class="box-ic-center" >
+                <img ng-src="{{userProfile.profileImage != null? userProfile.profileImage != ''?userProfile.profileImage : 'assets/theme/images/Crew Guru Logo - Black - LG.png' :'assets/theme/images/Crew Guru Logo - Black - LG.png'}}" height="150px">
+                <div style="height:150px">
+                    <h4><a href="" ng-click="vm.callUserProfile(userProfile.userId)"><strong>{{userProfile.profession}}</strong></a></h4>
+                        <p>{{userProfile.aboutMe | limitTo: 100}}&nbsp;</p>
+            	</div>
+            </div>
+                <div class="box-ic-center-interact">
+                    <a href=""><img src="assets/theme/images/favorite-btn.png">101</a>
+                    <a href=""><img src="assets/theme/images/comment-btn.png">22</a>
+                    <a href=""><img src="assets/theme/images/follow-btn.png" style="float:right;"></a>
+                </div>
+         </div>
+         </div>
+          
+</div>
+<!-- <div class="row bg-color1" style="width: 90%; background-color:#ffffff; position:relative; margin: auto;" ng-repeat="n in [1,2]"> -->
+
+
+              <!-- <div class="col-md-4" ng-repeat="userProfile in vm.allUserProfiles" ng-if=" (n ==1 && $index < 3) || (n ==2 && $index > 2)">
+                <div class="box-ic-center" style="background-color:#ffffff;">
+                  <img src={{userProfile.profileImage}}  height="175">
+                    <h4><a href="" ng-click="vm.callUserProfile(userProfile.userId)"><strong>{{userProfile.profession}}</strong></a></h4>
+                  <p> {{userProfile.aboutMe}}</p>
+                </div>
+                    <div class="box-ic-center-interact">
+                        <a href="#"><img src="assets/theme/images/favorite-btn.png">101</a><a href="#"><img src="assets/theme/images/comment-btn.png">22</a><a href="#"><img src="assets/theme/images/follow-btn.png" style="float:right;"></a>
+                    </div>
+              </div> -->
+              
+                
+               

@@ -1,0 +1,447 @@
+
+
+<header class="main-header" >
+
+<a href="/#picbgModal" data-toggle="modal" ><div class="editUserHeaderPhoto-addBackground"></div></a><div class="container-userProfile" ng-style="{'background-image': 'url(' + globals.currentUser.bgimage + ')'}"></div>
+
+<div ng-include="'modal/modal.bg.view.html'" ></div>
+        
+</header>
+<div class="body-content clearfix" style="padding-top:211px;" >
+
+<div class="userProfilePhoto"><img src={{vm.user.listOfUserProfile[0].profileImage}} class="circleUserPhoto-lg" alt=""></div>
+        <div class="bg-color1">
+          <div class="containerUserProfile">
+            <div class="col-md-12 col-sm-12">
+              <div class="block-section userProfileInformation">
+                <h3 class="no-margin-top">Edit Profile &emsp;&emsp;&emsp;Edit Portfolio</h3>
+                <hr/>
+
+                  
+               <!-- block forms -->
+        <div class="block-section bg-color2 line-bottom" id="sh-form">
+          <div class="container">
+            <div class="formrow">
+              <div class="col-lg-12">                
+                <form name="form" ng-submit="vm.save()" role="form">
+                  
+                    
+                    <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" name="x" value="" class="form-control" id="name"  name="firstname" ng-model="vm.user.firstname"  placeholder="Firstname Lastname" readonly>
+                  </div>
+                    
+                    
+                    <div class="form-group">
+                    <label for="EmailAddress">Email address</label>
+                    <input type="email" name="x" value="" class="form-control" id="exampleInputEmail1"  name="emailId" ng-model="vm.user.emailId"  placeholder="Enter email" readonly>
+                  </div>
+                    
+                    
+                  <div class="form-group">
+                    <label for="PhoneNumber">Phone Number</label>
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="phonenumber" ng-model="vm.user.listOfUserProfile[0].phonenumber"  placeholder="Phone Number">
+                  </div>
+
+
+                    <div class="form-group">
+                    <label for="OccupationJobTitle">Occupation / Job Title</label>
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="profession" ng-model="vm.user.listOfUserProfile[0].profession"  placeholder="">
+                  </div>
+
+
+
+                    <div class="form-group">
+                    <label >Skills</label>
+                    
+                    
+	                    <div angucomplete-alt id="skillelem"
+						  placeholder="Search Skills"
+						  maxlength="50"
+						  pause="100"
+						  selected-object="selectedSkill"
+						  local-data="skills"
+						  search-fields="name"
+						  title-field="name"
+						  minlength="1"
+						  input-class="form-control form-control-small"
+						  match-class="highlight">
+						</div>
+					
+                  </div>
+                  <div class="addWorkExperience"><a href="" class=" btn-theme btn-t-primary" ng-click="vm.addSkill()">Add Skill</a></div><br>
+                  <div ng-repeat="skill in vm.skillsSlected" >
+                  
+                  <div class="input-append">
+					    <input class="span2" type="text" value="{{skill}}" readonly style="width:400px;">
+					    <button type="button" class="btn, btn-slim, btn-danger" >
+					        <i class="glyphicon glyphicon-remove" ng-click="vm.removeSkill(skill)"></i>
+					    </button>
+					    <br><br>
+					</div>
+                  	
+                  	<!-- <p>
+		                  <div class="col-sm-4">
+		                  	<input type="text"	class="form-control " value="{{skill}}" />
+		                  </div>
+		                  <div class="col-sm-1"> 
+		                  	<a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+		                    </div>
+		             </p> -->
+				</div>
+
+                    
+                    
+
+
+
+
+                    <div class="form-group">
+                    <label for="websiteURL">Website / URL</label>
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="website" ng-model="vm.user.listOfUserProfile[0].website"  placeholder="http://">
+                  </div>
+                    
+
+
+                    <br>
+                    <div ng-repeat="location in vm.user.listOfLocation | filter: { type: 'C' }:true">
+                    <div class="form-group">
+                    <label >Location</label>
+                    <select class="form-control" name="country" ng-model="location.country">
+                      <option>Country</option>
+                      <option>United States of America</option>
+                      <option>Canada</option>
+                      <option>Mexico</option>
+                    </select>
+                  </div>
+
+
+
+                    <div class="form-group" >
+                    <select class="form-control" name="state" ng-model="location.state">
+                      <option>State / Province</option>
+                      <option>AL</option>
+                      <option>AK</option>
+                      <option>AZ</option>
+                      <option>AR</option>
+                      <option>CA</option>
+
+                      <option>CO</option>
+                      <option>CT</option>
+                      <option>DE</option>
+                      <option>FL</option>
+                      <option>GA</option>
+                      <option>HI</option>
+
+                      <option>ID</option>
+                      <option>IL</option>
+                      <option>IN</option>
+                      <option>IA</option>
+                      <option>KS</option>
+
+                      <option>KY</option>
+                      <option>LA</option>
+                      <option>ME</option>
+                      <option>MD</option>
+                      <option>MA</option>
+                      <option>MI</option>
+
+                      <option>MN</option>
+                      <option>MS</option>
+                      <option>MO</option>
+                      <option>MT</option>
+                      <option>NE</option>
+                      <option>NV</option>
+
+                      <option>NH</option>
+                      <option>NJ</option>
+                      <option>NM</option>
+                      <option>NY</option>
+                      <option>NC</option>
+
+                      <option>ND</option>
+                      <option>OH</option>
+                      <option>OK</option>
+                      <option>OR</option>
+                      <option>PA</option>
+                      <option>RI</option>
+
+                      <option>SC</option>
+                      <option>TN</option>
+                      <option>TX</option>
+                      <option>UT</option>
+                      <option>VT</option>
+                      <option>VA</option>
+
+                      <option>WA</option>
+                      <option>WV</option>
+                      <option>WI</option>
+                      <option>WY</option>
+                      
+
+                      <option>--</option>
+
+
+                      <option>AS</option>
+                      <option>DC</option>
+                      <option>GU</option>
+                      <option>PR</option>
+                      <option>VI</option>
+
+                    </select>
+                  </div>   
+
+
+
+
+
+
+
+                    <div class="form-group" style="width:45%; float:left;">
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="city" ng-model="location.city"  placeholder="City">
+                  </div>
+
+                    <div class="form-group" style="width:45%; float:right; margin-right: 60px;">
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="zip" ng-model="location.zip"  placeholder="ZIP">
+                  </div>
+                  
+                  </div>
+                  <br><br><br><br>
+
+<!-- Willing to work as local secion-->
+<!-- need to make user choose one and not the other. if, else if, etc. -->
+                    <label for="availableForHire">Willing to work as Local in:</label>
+                  
+
+					<div ng-repeat="location in vm.user.listOfLocation | filter: { type: 'F' }:true">
+                    <div class="form-group">
+                    <select class="form-control" name="state" ng-model="location.country">
+                      <option>Country</option>
+                      <option>United States of America</option>
+                      <option>Canada</option>
+                      <option>Mexico</option>
+                    </select>
+                  </div>
+
+
+
+                    <div class="form-group">
+                    <select class="form-control" name="state" ng-model="location.state">
+                      <option>State / Province</option>
+                      <option>AL</option>
+                      <option>AK</option>
+                      <option>AZ</option>
+                      <option>AR</option>
+                      <option>CA</option>
+
+                      <option>CO</option>
+                      <option>CT</option>
+                      <option>DE</option>
+                      <option>FL</option>
+                      <option>GA</option>
+                      <option>HI</option>
+
+                      <option>ID</option>
+                      <option>IL</option>
+                      <option>IN</option>
+                      <option>IA</option>
+                      <option>KS</option>
+
+                      <option>KY</option>
+                      <option>LA</option>
+                      <option>ME</option>
+                      <option>MD</option>
+                      <option>MA</option>
+                      <option>MI</option>
+
+                      <option>MN</option>
+                      <option>MS</option>
+                      <option>MO</option>
+                      <option>MT</option>
+                      <option>NE</option>
+                      <option>NV</option>
+
+                      <option>NH</option>
+                      <option>NJ</option>
+                      <option>NM</option>
+                      <option>NY</option>
+                      <option>NC</option>
+
+                      <option>ND</option>
+                      <option>OH</option>
+                      <option>OK</option>
+                      <option>OR</option>
+                      <option>PA</option>
+                      <option>RI</option>
+
+                      <option>SC</option>
+                      <option>TN</option>
+                      <option>TX</option>
+                      <option>UT</option>
+                      <option>VT</option>
+                      <option>VA</option>
+
+                      <option>WA</option>
+                      <option>WV</option>
+                      <option>WI</option>
+                      <option>WY</option>
+                      
+
+                      <option>--</option>
+
+
+                      <option>AS</option>
+                      <option>DC</option>
+                      <option>GU</option>
+                      <option>PR</option>
+                      <option>VI</option>
+
+                    </select>
+                  </div>   
+
+
+
+
+
+
+
+                    <div class="form-group" style="width:45%; float:left;">
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="city" ng-model="location.city" placeholder="City">
+                  </div>
+
+                    <div class="form-group" style="width:45%; float:right; margin-right: 60px;">
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="zip" ng-model="location.zip"  placeholder="ZIP">
+                  </div><br><br><br>
+
+				</div>
+<div class="addWorkExperience"><a href="" ng-click="vm.addLocation()" ><span style="color:#999999;">+</span> Add More Local Locations</a></div><br><br>
+
+
+
+                                        
+                    <div class="col-sm-3"> 
+                    <!-- need to make user choose one and not the other. if, else if, etc. -->
+                    <label for="availableForHire">Availablility for Hire</label>
+                  <div class="white-space-5"></div>
+                  
+                    <div class="checkbox flat-checkbox">
+                      <label>
+                        <input type="checkbox"  ng-model="vm.user.listOfUserProfile[0].availabilityHire" ng-true-value="true"
+       ng-false-value="false" ng-checked="vm.user.listOfUserProfile[0].availabilityHire"> 
+                        <span class="fa fa-check" ></span>
+                        Yes
+                      </label>
+                    </div>
+                    <div class="checkbox flat-checkbox">
+                      <label>
+                        <input type="checkbox"  ng-model="vm.user.listOfUserProfile[0].availabilityHire" ng-true-value="false"
+       ng-false-value="true" ng-checked="vm.user.listOfUserProfile[0].availabilityHire"> 
+                        <span class="fa fa-check" ></span>
+                        No
+                      </label>
+                    </div>
+                  
+                    </div>
+
+
+                    <div class="col-sm-3"> 
+                    <!-- need to make user choose one and not the other. if, else if, etc. -->
+                    <label for="availableForHire">Work Category</label>
+                  <div class="white-space-5"></div>
+                  
+                    <div class="checkbox flat-checkbox" ng-repeat="wcategory in vm.workCategories">
+                      <label>
+                        <input type="checkbox"  ng-click="vm.selectWorkCategory(wcategory.id)" 
+                        ng-model="checkBox" value="wcategory.id" ng-checked="vm.workCategoriesSlected.indexOf(wcategory.id) > -1"> 
+                        
+                        <span class="fa fa-check" ></span>
+                        {{wcategory.name}}
+                      </label>
+                    </div>
+                    
+                  
+                  
+                    </div>
+
+
+
+
+				<div class="col-sm-6"> 
+                    <!-- need to make user choose one and not the other. if, else if, etc. -->
+                    <label for="availableForHire">Industry</label>
+                  <div class="white-space-5"></div>
+                  
+					 <div class="checkbox flat-checkbox" ng-repeat="industry in vm.industries">
+                      <label>
+                        <input type="checkbox"  ng-click="vm.selectIndustry(industry.id)" 
+                        ng-model="checkBox" value="industry.id" ng-checked="vm.industriesSlected.indexOf(industry.id) > -1"> 
+                        
+                        <span class="fa fa-check" ></span>
+                        {{industry.name}}
+                      </label>
+                    </div> 
+						
+                  </div>
+                   
+                    <br><br><br><br><br><br><br><br><br>
+                    <label for="city">Social Links</label><br>
+                        <div class="col-sm-2"><input type="text" name="y" class="form-control" id="exampleInputtext1"  name="twitterLink" ng-model="vm.user.listOfUserProfile[0].twitterLink"  placeholder="twitter">
+                    </div>
+
+                    <div class="col-sm-2"><input type="text" name="y" class="form-control" id="exampleInputtext1"  name="facebookLink" ng-model="vm.user.listOfUserProfile[0].facebookLink"  placeholder="facebook">
+                    </div>
+
+                    <div class="col-sm-2"><input type="text" name="y" class="form-control" id="exampleInputtext1"  name="instagramLink" ng-model="vm.user.listOfUserProfile[0].instagramLink"  placeholder="instagram">
+                    </div>
+                    
+                    <div class="col-sm-2"><input type="text" name="y" class="form-control" id="exampleInputtext1"  name="linkedinLink" ng-model="vm.user.listOfUserProfile[0].linkedinLink"  placeholder="linkedin">
+                    </div>
+<br><br><br>
+                    
+                 
+                    
+            <div class="form-group">
+                    <label for="aboutMe">About Me</label>
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="website" ng-model="vm.user.listOfUserProfile[0].aboutMe"  placeholder="Tell us about yourself" style="height:150px;">
+                  </div>
+                    
+                    
+                    
+                <div class="form-group">
+                    <label for="websiteURL">Work Experience</label>
+                </div> 
+                   
+               <div ng-repeat="workExperience in vm.user.listOfWorkExperience">
+                <div class="form-group">
+                   
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="website" ng-model="workExperience.company"  placeholder="Company">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="website" ng-model="workExperience.description"  placeholder="Description">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="website" ng-model="workExperience.jobtitle"  placeholder="Job Title / Role">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="y" class="form-control" id="exampleInputtext1"  name="website" ng-model="workExperience.workdates"  placeholder="mm/dd/yy – mm/dd/yy">
+                </div>
+                </div>
+                <div class="addWorkExperience"><a href="" ng-click="vm.addWorkExperience()"><span style="color:#999999;">+</span> Add More Work Experience</a></div><br><br>
+
+     
+                  <button type="submit" class="btn btn-theme btn-t-primary">Save</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div><!-- end block forms -->
+                  
+                
+
+
+
+              </div>
+            </div>
+          </div>
+          </div>       
+      </div>
